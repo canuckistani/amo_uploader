@@ -1,11 +1,9 @@
-========
-Octogit
-========
+# AMO Upload script
 
-This repository has been created with Octogit.
+This script will add a given xpi file to the AMO review queue.
 
-.. image:: http://myusuf3.github.com/octogit/assets/img/readme_image.png
+Usage: python upload.py --addon=1234 --user=5678 --xpi=<path>
 
-Author
-======
-Mahdi Yusuf (@myusuf3)
+--addon: the AMO add-on id
+--user: the AMO user Id for the user we're going to impersonate
+--xpi: the xpi file to upload

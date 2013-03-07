@@ -17,8 +17,9 @@ except:
 def p(o):
     return dumps(o, indent=4)
 
-sys.path.append(join(abspath('.'), 'src'))
-from amo import AMOAuth
+# so we can import Andy's library, probably doin' it rong.
+sys.path.append(join(abspath('.'), 'amo/src'))
+import amo
 
 if __name__ == '__main__':
 
@@ -57,11 +58,11 @@ if __name__ == '__main__':
     xpi_file = open(options.xpi, 'rb')
     endpoint = config['endpoint']
 
-    amo = AMOAuth(domain=endpoint['domain'], port=endpoint['port'], protocol=endpoint['protocol'])
+    amoClient = amo.AMOAuth(domain=endpoint['domain'], port=endpoint['port'], protocol=endpoint['protocol'])
 
-    amo.set_consumer(consumer_key=config['consumer_key'],
+    amoClient.set_consumer(consumer_key=config['consumer_key'],
                          consumer_secret=config['consumer_secret'])
-    user = amo.get_user()
+    user = amoClient.get_user()
 
     data = {
         'xpi': xpi_file, 
@@ -70,4 +71,4 @@ if __name__ == '__main__':
     }
 
     print options.addon
-    response = amo.create_version(data, options.addon)
+    response = amoClient.create_version(data, options.addon)

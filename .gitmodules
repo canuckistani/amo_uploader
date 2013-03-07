@@ -1,3 +1,6 @@
 [submodule "amo-oauth"]
 	path = amo-oauth
 	url = https://github.com/andymckay/amo-oauth
+[submodule "amo"]
+	path = amo
+	url = git://github.com/andymckay/amo-oauth.git

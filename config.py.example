@@ -1,0 +1,9 @@
+config = {
+    'consumer_key': 'foo',
+    'consumer_secret': 'bar',
+    'endpoint': {
+        'domain': 'addons-dev.allizom.org', 
+        'port': 443, 
+        'protocol': 'https'
+    }
+}

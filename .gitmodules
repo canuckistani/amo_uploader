@@ -1,0 +1,3 @@
+[submodule "amo-oauth"]
+	path = amo-oauth
+	url = https://github.com/andymckay/amo-oauth
